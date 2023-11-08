@@ -1,0 +1,43 @@
+@startmindmap
+caption figure 1
+title My super title
+
+* Debian
+** Ubuntu
+*** Linux Mint
+*** Kubuntu
+*** Lubuntu
+*** KDE Neon
+** LMDE
+** SolydXK
+** SteamOS
+** Raspbian with a very long name
+*** <s>Raspmbc</s> => OSMC
+*** <s>Raspyfi</s> => Volumio
+
+* Debian
+** Ubuntu
+*** Linux Mint
+
+*[#MistyRose] 2.1: Insertion sort
+**[#FFBBCC] Rose
+**[#lightblue] Blue
+
+left side
+
+*[#Orange] root node
+ *[#lightgreen] some first level node
+  *[#FFBBCC] second level node
+  *[#lightblue] another second level node
+   *_ Removing box
+ *[#lightgreen] another first level node
+
+center footer My super footer
+
+legend right
+  Short
+  legend
+endlegend
+
+
+@endmindmap

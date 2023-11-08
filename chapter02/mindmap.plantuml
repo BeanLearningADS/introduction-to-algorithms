@@ -1,0 +1,91 @@
+@startmindmap
+
+*[#MistyRose] 2.1: Insertion sort
+**_: keys are sorted
+as well as their
+satellite data;
+**[#lightgreen] pseudocode
+***:InsertionSort(A,n)
+
+1. <b>for</b> i = 2 <b>to</b> n
+2.  &#160;&#160; key = A[i]
+3.  &#160;&#160; // Insert A[i] into the sorted subarray A[1:i-1]
+4.  &#160;&#160; j = i - 1 
+5.  &#160;&#160; <b>while</b> j > 0 and A[j] > key
+6.  &#160;&#160; &#160; &#160; A[j + 1] = A[j]
+7.  &#160;&#160; &#160; &#160; j = j - 1
+8.  &#160;&#160; A[j + 1] = key
+;
+
+**[#lightgreen] loop invariant
+***:a predicate 
+that holds before 
+(and after) each iteration;
+****_:elements A[1:i-1] were
+originally in positions 
+1 through i-1, but now 
+in sorted order.;
+
+***[#FFBBCC]:help understand
+the <b>correctness</b> of
+an algorithm using
+3 properties;
+**** Initialisation
+*****_:true prior to
+the first iteration
+---;
+**** Maintenance
+*****_:true before an
+iteration and remains
+true before the 
+next iteration
+---;
+**** Termination
+*****_:on termination gives
+a useful property 
+to show the 
+algorithm is correct
+---;
+
+***: a form of 
+mathematical 
+induction;
+
+*[#MistyRose]: 2.2: Analysing
+algorithms;
+**[#lightgreen]:3 main 
+aspects;
+*** Correctness
+***:Ease of 
+understanding;
+***:Resource 
+consumption;
+****:measure time/space 
+requirements;
+*****[#FFBBCC]:Empirical
+approach;
+******_:implement
+the algo and
+measure the 
+actual 
+running time
+---;
+
+*****[#FFBBCC]:Theoretical
+approach;
+******[#white]:agree on
+the model
+for the 
+computer
+on which
+the algo
+will run;
+
+*******[#lightblue]:RAM model
+(Random-Access
+ Machine);
+
+*[#MistyRose]: 2.3: Designing
+algorithms;
+
+@endmindmap
