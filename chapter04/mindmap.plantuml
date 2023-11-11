@@ -1,0 +1,38 @@
+@startmindmap
+
+* Chapter 4 ?
+**[#lightgreen] Recursion
+
+***[#FFBBCC] Structure
+
+***[#FFBBCC]:Recurrence
+Equation;
+****:solve by 
+getting an explicit
+expression for the
+running time;
+*****_:find a value k
+of N for which 
+T(k) is known
+---;
+*****_:expand the
+right side of 
+the Recurrence 
+Equation
+---;
+
+***[#FFBBCC]:The Master
+theorem;
+****[#lightblue]: must be of the form 
+T(n)=aT(n/b) + f(n);
+
+***** f(n) < n^{log_b(a)}
+******_ T(n)=θ(n^{log_b(a)})
+
+***** f(n) = n^{log_b(a)}
+******_ T(n)=θ(n^{log_b(a)}*logn)
+
+***** f(n) > n^{log_b(a)}
+******_ T(n)=θ(f(n))
+
+@endmindmap

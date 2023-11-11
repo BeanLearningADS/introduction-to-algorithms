@@ -84,8 +84,163 @@ will run;
 *******[#lightblue]:RAM model
 (Random-Access
  Machine);
+********:no concurrent 
+operations;
+*********_:instructions
+are sequentially
+executed
+---;
+
+********:each simple 
+operation takes 
+1 time unit
+---;
+*********_:numerical
+operations
+---;
+*********_:control
+instructions
+---;
+*********_:memory 
+read/write 
+access
+---;
+
+********:each variable
+is stored in
+1 space unit;
+
+******[#lightblue]:Asymptotic
+analysis, aka. 
+asymptotics;
+*******:method of 
+describing 
+limiting behavior;
+********_:
+lim[f(x)/g(x)] = 1 
+(x -> infinity)
+;
+*******:rate/order 
+of growth
+;
+********_:ignore
+lower-order
+terms
+;
+********_:ignore
+constant coefficients
+;
+********_:consider only
+the leading term
+;
+
+*******:expressed using 
+asymptotic notations;
+*******[#MistyRose]:worst case vs 
+average case;
+********:upper bound 
+is good for 
+real-time 
+computing;
+*********_:operations must 
+complete by 
+a deadline;
+********:the worst case 
+appears fairly
+often;
+*********_:searching 
+for a non-existing 
+value in a db;
+********:the average case 
+is often roughly
+as bad as 
+the worst case;
+********[#lightgreen]:the average case 
+may be realistic
+in some algos;
+*********_:may not be
+apparent what 
+constitutes an
+"average" input
+;
+*********:assume all
+inputs of a 
+given size are 
+equally likely;
+**********_:may be
+violated, but
+sometimes can 
+use a 
+<b>randomised algo</b>
+;
+**********[#FFBBCC]:Probabilistic
+analysis;
 
 *[#MistyRose]: 2.3: Designing
 algorithms;
+
+**[#lightgreen]:Incremental 
+method;
+
+**[#lightgreen]:Divide-and-Conquer 
+method;
+*** More in Chapter 4
+***:often straightforward
+analysis of the 
+running time;
+***:naturally
+implemented
+using Recursion;
+
+***[#FFBBCC] Merge sort
+****[#lightblue] Concept
+*****:<b>1. Divide</b> the
+to-be-sorted
+subarray A[p:r]
+into 2 adjacent 
+subarrays A[p:q]
+and A[q+1:r];
+******_:by taking the 
+midpoint q 
+between p and r;
+
+*****:<b>2. Conquer</b> each
+to-be-sorted subarray.
+It means sorting
+each subarray;
+******_:by recursively
+applying the 
+merge sort on 
+each subarray;
+
+*****:<b>3. Combine</b> the 
+sorted subarrays
+(2 of them);
+******_:by merging
+the 2 sorted subarrays 
+A[p:q] and A[q+1:r]
+back into A[p:r]
+;
+******_:key operation 
+of the merge sort algo;
+
+****[#lightblue] pseudocode
+*****:<b>MergeSort</b>(A, lo, hi)
+
+1. <b>if</b> lo ≥ hi // zero or one element
+2. &#160;&#160; <b>return</b>
+3. mi = ⌊(lo + hi)/2⌋ // midpoint between p and r
+4. <b>MergeSort</b>(A, lo, mi) // recursively sort A[p:q]
+5. <b>MergeSort</b>(A, mi + 1, hi) // recursively sort A[q + 1:r]
+6. <b>Merge</b>(A, lo, mi, hi) // Merge A[p:q] and A[q+1:r] into A[p:r];
+*****:<b>Merge</b>(A, lo, mi, hi)
+
+1. // Can you try implementing this procedure?;
+
+**[#lightgreen]:Decrease-and-Conquer 
+method;
+
+**[#lightgreen] Recursion
+*** More in Chapter 4
 
 @endmindmap
