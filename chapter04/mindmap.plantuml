@@ -1,9 +1,72 @@
 @startmindmap
 
-* Chapter 4 ?
-**[#lightgreen] Recursion
+*[#MistyRose]:Divid-and-conquer
+strategy;
+**[#lightgreen]:Algorithm
+Design Paradigm;
+***[#FFBBCC] Divide 
+****:<b>Divide</b> the problem
+into one or more
+subproblems;
+*****_:smaller instances
+of the same problem;
+***[#FFBBCC] Conquer
+****:<b>Conquer</b> the subproblems
+by solving them 
+(recursively or directly);
+*****_:The recursion 
+bottoms out when 
+it reaches a 
+base case and 
+the subproblem 
+is small enough 
+to solve directly 
+without 
+further recursing. 
+;
+***[#FFBBCC] Combine 
+****:<b>Combine</b> the 
+subproblem solutions;
+*****_:to form a 
+solution to the 
+original problem;
+
+**:powerful strategy 
+for designing
+asymptotically
+efficient algorithms;
+**[#lightgreen]:Non-recursive 
+approach 
+(explicit stack);
+**[#lightgreen]:Recursive
+approach;
+***[#FFBBCC] Recurrence
+****:an equation or inequlity 
+that describes a 
+function in terms of 
+its value on other, 
+typically smaller, 
+arguments using 
+the function itself;
 
 ***[#FFBBCC] Structure
+**** base case 
+*****_: not involving
+a recursive invocation
+;
+**** recursive case
+*****_:involving 
+the recursive invocation
+of the same function 
+on different
+(usually smaller) inputs
+;
+
+***[#FFBBCC] Solving recurrences
+****[#MistyRose] Substitution method
+****[#MistyRose] Recursion-tree method
+****[#MistyRose] Master method 
+****[#MistyRose] Akra-Bazzi method  
 
 ***[#FFBBCC]:Recurrence
 Equation;
@@ -14,12 +77,12 @@ running time;
 *****_:find a value k
 of N for which 
 T(k) is known
----;
+;
 *****_:expand the
 right side of 
 the Recurrence 
 Equation
----;
+;
 
 ***[#FFBBCC]:The Master
 theorem;
@@ -34,5 +97,58 @@ T(n)=aT(n/b) + f(n);
 
 ***** f(n) > n^{log_b(a)}
 ******_ T(n)=θ(f(n))
+
+
+
+
+*[#MistyRose]:4.1 Multiplying
+square matrices;
+**:(Section D.1)
+for how to
+multiply 2
+square matrices;
+**[#lightgreen] Dense matrices
+***:most of the 
+n^2 entries 
+are NOT 0;
+
+**[#lightgreen] Sparse matrices 
+***:most of the 
+n^2 entries 
+are 0;
+
+**[#lightgreen]:Simple 
+Divide-and-Conquer 
+algorithm;
+***:The Divide step 
+partitions each 
+n x n matrix 
+into four n/2 x n/2
+matrices;
+
+*[#MistyRose]:Strassen's 
+algorithm for 
+matric multiplication;
+
+*[#MistyRose]:The substitution
+method for solving
+recurrences;
+
+*[#MistyRose]:The recursion-tree
+method for solving 
+recurrences;
+
+*[#MistyRose]:The master method 
+for solving 
+recurrences;
+
+*[#MistyRose]:Proof of 
+the continuous
+master theorem;
+
+*[#MistyRose]:Akra-Bazzi 
+recurrences;
+
+
 
 @endmindmap
