@@ -120,27 +120,123 @@ are 0;
 **[#lightgreen]:Simple 
 Divide-and-Conquer 
 algorithm;
-***:The Divide step 
+***[#FFBBCC]:The <b>Divide</b> step 
 partitions each 
 n x n matrix 
 into four n/2 x n/2
 matrices;
+****_:
+A11, A12, A21, A22
+B11, B12, B21, B22 and 
+C11, C12, C21, C22 respectively
+using index calculations
+;
+***[#FFBBCC]:The <b>Conquer</b> step 
+invokes itself 8 times;
+****:The first four invocations
+compute the first terms ;
+*****_:
+FUNCTION (A11 ; B11 ; C11 ; n/2)
+FUNCTION (A11 ; B12 ; C12 ; n/2)
+FUNCTION (A21 ; B11 ; C21 ; n/2)
+FUNCTION (A21 ; B12 ; C22 ; n/2)
+;
+****:The last four invocations
+compute and add in 
+the second terms;
+*****_:
+FUNCTION (A12 ; B21 ; C11 ; n/2)
+FUNCTION (A12 ; B22 ; C12 ; n/2)
+FUNCTION (A22 ; B21 ; C21 ; n/2)
+FUNCTION (A22 ; B22 ; C22 ; n/2)
+;
+****:Each recursive invocation 
+adds the product of 
+2 submatrices, 
+one of A and one of B 
+to the appropriate
+submatrix of C in place
+using index calculations;
+*****_:The base case (n=1)
+just increase the scalar value 
+of a submatrix of C by 
+the scalar multiplication
+of the submatrices of A and B
+c11 = c11 + a11 . b1
+;
+***[#FFBBCC]:<b>No Combine</b> step 
+because the C matrix
+is updated inplace;
 
-*[#MistyRose]:Strassen's 
+*[#MistyRose]:4.2 Strassen's 
 algorithm for 
 matric multiplication;
+**:natural definition 
+of matrix multiplication 
+requires n^3 scalar 
+multiplications;
+***_:
+many mathematicians 
+presumed that it
+was <b>not possible</b> 
+to multiply matrices 
+in o(n^3) time 
+until 1969
+;
+**:Strassen’s algorithm 
+runs in Theta(n^lg7) time;
 
-*[#MistyRose]:The substitution
+*[#MistyRose]:4.3 The substitution
 method for solving
 recurrences;
+**:<b>Guess</b> the form of
+the solution using 
+symbolic constants;
+**:Use <b>mathematical</b> 
+<b>induction</b> to show that 
+the solution works, 
+and find the constants;
 
-*[#MistyRose]:The recursion-tree
+
+*[#MistyRose]:4.4The recursion-tree
 method for solving 
 recurrences;
+**:each node represents 
+the cost of a single subproblem 
+somewhere in the set of 
+recursive function invocations.;
+***_:sum all the per-level costs 
+to determine the total cost of 
+all levels of the recursion.
+Sometimes, adding up the 
+total cost takes 
+more creativity
+;
 
-*[#MistyRose]:The master method 
+*[#MistyRose]:4.5 The master method 
 for solving 
 recurrences;
+**:For algorithmic 
+recurrences of the form 
+
+<b>T(n) = aT(n/b) + f(n),</b>
+where a > 0 and b > 1 are constants;
+***_:We call f(n) a 
+<b>driving function</b>, 
+and we call a recurrence 
+of this general form a 
+<b>master recurrence</b>
+;
+**[#lightgreen] The master theorem
+***[#FFBBCC] If f(n) < n^{log_b(a)}
+**** T(n) = θ(n^{log_b(a)})
+***[#FFBBCC] If f(n) = n^{log_b(a)}
+**** T(n) = θ(n^{log_b(a)}*logn)
+***[#FFBBCC]:If
+ f(n) > n^{log_b(a)}
+ and aT(n/b) ≤ cf(n);
+**** T(n) = θ(f(n))
+
 
 *[#MistyRose]:Proof of 
 the continuous
